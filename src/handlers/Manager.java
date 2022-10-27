@@ -21,24 +21,46 @@ public class Manager extends Approver {
     protected boolean canApprove(int id, double cost, Type type) {
         boolean result = false;
 
-        if (type == Type.CONSUMABLES && cost <= 300) {
-            result = true;
-            return result;
-        } else if (type == Type.CLERICAL && cost <= 500) {
-            result = false;
-            return result;
-        } else if (type == Type.GADGETS && cost <= 1000) {
-            result = true;
-            return result;
-        } else if (type == Type.GAMING && cost <= 2000) {
-            result = true;
-            return result;
-        } else if (type == Type.PC && cost <= 5000) {
-            result = true;
-            return result;
-        } else {
-            result = false;
-            return result;
+        switch (type) {
+            case CONSUMABLES:
+                if (cost <= 300) {
+                    result = true;
+                    return result;
+                } else {
+                    break;
+                }
+            case CLERICAL:
+                if (cost <= 500) {
+                    result = true;
+                    return result;
+                } else {
+                    break;
+                }
+            case GADGETS:
+                if (cost <= 1000) {
+                    result = true;
+                    return result;
+                } else {
+                    break;
+                }
+            case GAMING:
+                if (cost <= 3000) {
+                    result = true;
+                    return result;
+                } else {
+                    break;
+                }
+            case PC:
+                if (cost <= 5000) {
+                    result = true;
+                    return result;
+                } else {
+                    break;
+                }
+            default:
+                result = false;
+                return result;
         }
+        return result;
     }
 }

@@ -24,35 +24,35 @@ public class Director extends Approver {
 
         switch (type) {
             case CONSUMABLES:
-                if (cost < 500) {
+                if (cost <= 500) {
                     result = true;
                     return result;
                 } else {
                     break;
                 }
             case CLERICAL:
-                if (cost < 1000) {
+                if (cost <= 1000) {
                     result = true;
                     return result;
                 } else {
                     break;
                 }
             case GADGETS:
-                if (cost < 1500) {
+                if (cost <= 1500) {
                     result = true;
                     return result;
                 } else {
                     break;
                 }
             case GAMING:
-                if (cost < 3000) {
+                if (cost <= 3000) {
                     result = true;
                     return result;
                 } else {
                     break;
                 }
             case PC:
-                if (cost < 6000) {
+                if (cost <= 6000) {
                     result = true;
                     return result;
                 } else {
