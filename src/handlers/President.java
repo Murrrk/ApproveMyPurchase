@@ -13,54 +13,25 @@ public class President extends Approver{
             return;
         }
 
-        //System.out.println("Purchase with id " + id + " needs approval from higher position than President.");
         next.approve(id, cost, type);
     }
 
     @Override
     protected boolean canApprove(int id, double cost, Type type) {
-        boolean result = false;
 
         switch (type) {
             case CONSUMABLES:
-                if (cost <= 1000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 1000;
             case CLERICAL:
-                if (cost <= 2000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 2000;
             case GADGETS:
-                if (cost <= 3000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 3000;
             case GAMING:
-                if (cost <= 5000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 5000;
             case PC:
-                if (cost <= 8000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 8000;
             default:
-                result = false;
-                return result;
+                return false;
         }
-        return result;
     }
 }

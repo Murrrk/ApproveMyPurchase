@@ -2,7 +2,6 @@ package handlers;
 
 import common.Type;
 
-
 /**
  * //TODO - Implement approval implementation for VicePresident level
  */
@@ -20,48 +19,20 @@ public class VicePresident extends Approver{
 
     @Override
     protected boolean canApprove(int id, double cost, Type type) {
-        boolean result = false;
 
         switch (type) {
             case CONSUMABLES:
-                if (cost <= 700) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 700;
             case CLERICAL:
-                if (cost <= 1500) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 1500;
             case GADGETS:
-                if (cost <= 2000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 2000;
             case GAMING:
-                if (cost <= 4500) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 4500;
             case PC:
-                if (cost <= 6500) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 6500;
             default:
-                result = false;
-                return result;
+                return false;
         }
-        return result;
     }
 }

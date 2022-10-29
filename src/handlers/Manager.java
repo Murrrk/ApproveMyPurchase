@@ -19,48 +19,20 @@ public class Manager extends Approver {
 
     @Override
     protected boolean canApprove(int id, double cost, Type type) {
-        boolean result = false;
 
         switch (type) {
             case CONSUMABLES:
-                if (cost <= 300) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 300;
             case CLERICAL:
-                if (cost <= 500) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 500;
             case GADGETS:
-                if (cost <= 1000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 1000;
             case GAMING:
-                if (cost <= 3000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 3000;
             case PC:
-                if (cost <= 5000) {
-                    result = true;
-                    return result;
-                } else {
-                    break;
-                }
+                return cost <= 5000;
             default:
-                result = false;
-                return result;
+                return false;
         }
-        return result;
     }
 }
